@@ -1,47 +1,71 @@
+<!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&family=Josefin+Slab:ital,wght@0,300;0,400;1,300&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="scss/style.scss" />
-  </head>
-  <body>
-    <h1 class="header">SITHS Movie Database</h1>
-    <h2 class="top-rated">Our Top Rated Movies</h2>
-    <section class="movie-grid">
-      <!--  <div class="movie-card">
-        <div class="movie-card-front">
-          <img
-            src="https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg"
-            alt=""
-            class="poster"
-          />
-        </div>
-        <div class="movie-card-back">
-          <h3 class="movie-card-header">The Dark Knight</h3>
-          <div class="score-box">
-            <p class="user-score">Community Score</p>
-            <p class="user-score">8.4</p>
-          </div>
 
-          <div class="release-box">
-            <p class="release-date">Released</p>
-            <p class="release-date">2020-06-12</p>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rick and Morty</title>
+  <link rel="stylesheet" href="scss/style.scss" />
+  <link rel="icon" href="/img/icon.ico">
+</head>
 
-          <div class="movie-genres">
-            <li class="movie-genre">Sci-Fi</li>
-            <li class="movie-genre">Fantasy</li>
-            <li class="movie-genre">Horror</li>
-          </div>
+
+<body>
+
+  <header class="header">
+    <a class="home" href="">Home</a>
+    <div class="search">
+      <select class="searchoptions" id="searchoptions" name="options">
+        <option value="all" selected disabled>Search By:</option>
+        <option value="character">Character</option>
+        <option value="seasonepisode">Season and Episode</option>
+        <option value="location">Location</option>
+      </select>
+      <input type="text" id="searchbar" class="searchbar" placeholder="Choose a search type" disabled></input>
+      <button disabled id="searchenter" class="searchenter">Search</button>
+    </div>
+  </header>
+
+  <div class="main">
+    <section class="topsection">
+      <div class="main-split">
+        <div class="main-img">
+          <button id="img-left" class="img-left">
+            Left
+          </button>
+          <img id="show-poster" class="show-poster" src="">
+          <button id="img-right" class="img-right">
+            Right
+          </button>
         </div>
-      </div> -->
+        <div class="main-description">Description</div>
+      </div>
+
+      <div class="main-ratings">Ratings</div>
     </section>
 
-    <script src="js/index.js"></script>
-  </body>
+    <section class="similar-shows">
+      <h1 class="similar-title">Similar shows to Rick and Morty:</h1>
+      <div class="shows-box">
+        <div class="show">
+          <h2>Show 1</h2>
+          <img src="img/icon.ico" alt="">
+          <h5>This show is about blah blah blah</h5>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-copyright">
+      <p>Copyright © (insert funny name)</p>
+      <p>All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="js/index.js"></script>
+
+</body>
+
+
 </html>

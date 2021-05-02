@@ -1,0 +1,50 @@
+//Header//
+
+header {
+  height: 6vh;
+  background-color: orange;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "home search search .";
+}
+
+.home {
+  grid-area: home;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+}
+
+.search {
+  grid-area: search;
+  display: flex;
+  justify-content: space-around;
+  background-color: purple;
+  padding: 0.5rem 0;
+}
+
+.searchoptions {
+  width: 20%;
+}
+
+.searchbar {
+  width: 60%;
+}
+
+.searchenter {
+  width: 12%;
+}
+
+//Footer//
+
+footer {
+  height: 12vh;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
