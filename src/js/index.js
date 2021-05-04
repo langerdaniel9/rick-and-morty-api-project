@@ -129,10 +129,11 @@ searchOptions.addEventListener("change", (event) => {
       removeWhateverIsInInputArea();
       createSeasonAndEpisodeSelect();
       let seasonBox = document.getElementById("searchseason");
-
       seasonBox.addEventListener("change", (event) => {
         let seasonNumber = seasonBox.value;
         changeNumberOfEpisodesDependingOnSeason(seasonNumber);
+        let searchEnter = document.getElementById("searchenter");
+        searchEnter.disabled = false;
       });
       break;
     case "location":
