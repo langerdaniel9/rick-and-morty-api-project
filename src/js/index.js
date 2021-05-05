@@ -76,8 +76,6 @@ async function findNumberOfEpisodesForEachSeason() {
   }
 }
 
-findNumberOfEpisodesForEachSeason();
-
 function addDropDownsForEpisodeNumber(season) {
   let episodeNumber = episodesPerSeason[season][1];
   let searchEpisode = document.getElementById("searchepisode");
@@ -128,6 +126,7 @@ searchOptions.addEventListener("change", (event) => {
     case "seasonepisode":
       removeWhateverIsInInputArea();
       createSeasonAndEpisodeSelect();
+      findNumberOfEpisodesForEachSeason();
       let seasonBox = document.getElementById("searchseason");
       seasonBox.addEventListener("change", (event) => {
         let seasonNumber = seasonBox.value;
@@ -146,4 +145,8 @@ searchOptions.addEventListener("change", (event) => {
     default:
       break;
   }
+});
+
+searchEnter.addEventListener("click", () => {
+  console.log("clicked");
 });
