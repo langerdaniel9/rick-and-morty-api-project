@@ -1,11 +1,18 @@
 import { TMDBKEY, TasteDiveKEY } from "./api-details";
 
+let currentURL = window.location.hash;
+if (currentURL != "") {
+  changePage();
+}
+
 let searchBar = document.getElementById("searchbar");
 let searchEnter = document.getElementById("searchenter");
 let searchOptions = document.getElementById("searchoptions");
 
 function createSeasonAndEpisodeSelect() {
   const searchBySeasonBox = document.createElement("select");
+  let searchEnter = document.getElementById("searchenter");
+  searchEnter.disabled = true;
   searchBySeasonBox.className = "searchbarselect";
   searchBySeasonBox.id = "searchseason";
   searchBySeasonBox.name = "searchseason";
@@ -30,18 +37,22 @@ function createSeasonAndEpisodeSelect() {
     searchByEpisodeBox,
     searchOptions.nextSibling.nextSibling
   );
+  searchBar = document.getElementById("searchbar");
 }
 
 function createSearchBar(type) {
-  const searchBar = document.createElement("input");
-  searchBar.className = "searchbar";
-  searchBar.id = "searchbar";
-  searchBar.placeholder = `Search for a ${type}`;
-  searchBar.type = "text";
+  const searchInput = document.createElement("input");
+  let searchEnter = document.getElementById("searchenter");
+  searchEnter.disabled = true;
+  searchInput.className = "searchbar";
+  searchInput.id = "searchbar";
+  searchInput.placeholder = `Search for a ${type}`;
+  searchInput.type = "text";
   searchOptions.parentElement.insertBefore(
-    searchBar,
+    searchInput,
     searchOptions.nextSibling
   );
+  searchBar = document.getElementById("searchbar");
 }
 
 function removeWhateverIsInInputArea() {
@@ -113,7 +124,7 @@ function changeNumberOfEpisodesDependingOnSeason(seasonNumber) {
   }
 }
 
-searchOptions.addEventListener("change", (event) => {
+searchOptions.addEventListener("change", () => {
   let value = searchOptions.value;
 
   switch (value) {
@@ -122,6 +133,9 @@ searchOptions.addEventListener("change", (event) => {
       createSearchBar("character");
       searchBar.disabled = false;
       searchBar.placeholder = "Search for a character";
+      if (searchBar != undefined) {
+        searchEnter.disabled = false;
+      }
       break;
     case "seasonepisode":
       removeWhateverIsInInputArea();
@@ -147,6 +161,44 @@ searchOptions.addEventListener("change", (event) => {
   }
 });
 
-searchEnter.addEventListener("click", () => {
-  console.log("clicked");
+searchBar.addEventListener("keyup", (event) => {
+  console.log("yello");
+  let searchBar = document.getElementById("searchbar");
+  console.log(searchBar.value);
 });
+
+searchEnter.addEventListener("click", (event) => {
+  console.log("clicked");
+  let value = searchOptions.value;
+  console.log(searchBar.value);
+  switch (value) {
+    case "character":
+      let characterInput = document.getElementById("searchbar").value;
+      window.location.hash = `search/c=${characterInput}/`;
+      break;
+    case "seasonepisode":
+      /*if(episode selector = nothing) {
+        window.location.hash = `s=${season}/`;
+      } else {
+        window.location.hash = `s=${season}/e=${episode}/`;
+      }*/
+      break;
+    case "location":
+      let locationInput = document.getElementById("searchbar").value;
+      window.location.hash = `search/l=${locationInput}/`;
+      break;
+
+    default:
+      break;
+  }
+});
+
+window.addEventListener("hashchange", (event) => {
+  currentURL = window.location.hash;
+  console.log(currentURL);
+});
+
+function changePage() {
+  alert("you arent at the home page");
+  currentURL = window.location.hash;
+}
