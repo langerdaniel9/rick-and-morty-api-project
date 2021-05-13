@@ -1,4 +1,4 @@
-import { TMDBKEY, TasteDiveKEY } from "./api-details";
+const TMDBKey = process.env.TMDBKey;
 
 let currentURL = window.location.hash;
 if (currentURL != "") {
@@ -6,13 +6,14 @@ if (currentURL != "") {
 }
 
 let searchBar = document.getElementById("searchbar");
+let searchBox = document.getElementById("searchbox");
 let searchEnter = document.getElementById("searchenter");
 let searchOptions = document.getElementById("searchoptions");
 
 function createSeasonAndEpisodeSelect() {
-  const searchBySeasonBox = document.createElement("select");
   let searchEnter = document.getElementById("searchenter");
   searchEnter.disabled = true;
+  const searchBySeasonBox = document.createElement("select");
   searchBySeasonBox.className = "searchbarselect";
   searchBySeasonBox.id = "searchseason";
   searchBySeasonBox.name = "searchseason";
@@ -23,20 +24,17 @@ function createSeasonAndEpisodeSelect() {
       <option value="2">Season 2</option>
       <option value="3">Season 3</option>
       <option value="4">Season 4</option>`;
-  searchOptions.parentElement.insertBefore(
-    searchBySeasonBox,
-    searchOptions.nextSibling
-  );
+  searchBox.insertAdjacentElement("beforeend", searchBySeasonBox);
 
   const searchByEpisodeBox = document.createElement("select");
   searchByEpisodeBox.className = "searchbarselect";
   searchByEpisodeBox.id = "searchepisode";
   searchByEpisodeBox.name = "searchepisode";
-  searchByEpisodeBox.innerHTML = `<option value="" hidden>Episode</option><option value="" disabled>Choose a season</option>`;
-  searchOptions.parentElement.insertBefore(
-    searchByEpisodeBox,
-    searchOptions.nextSibling.nextSibling
-  );
+  searchByEpisodeBox.innerHTML = `
+      <option value="" hidden>Episode</option>
+      <option value="" disabled>Choose a season</option>`;
+  searchBox.insertAdjacentElement("beforeend", searchByEpisodeBox);
+
   searchBar = document.getElementById("searchbar");
 }
 
@@ -48,10 +46,7 @@ function createSearchBar(type) {
   searchInput.id = "searchbar";
   searchInput.placeholder = `Search for a ${type}`;
   searchInput.type = "text";
-  searchOptions.parentElement.insertBefore(
-    searchInput,
-    searchOptions.nextSibling
-  );
+  searchBox.insertAdjacentElement("beforeend", searchInput);
   searchBar = document.getElementById("searchbar");
 }
 
@@ -75,7 +70,7 @@ let episodesPerSeason = [];
 async function findNumberOfEpisodesForEachSeason() {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/tv/60625?api_key=${TMDBKEY}`
+      `https://api.themoviedb.org/3/tv/60625?api_key=${TMDBKey}`
     );
     const data = await response.json();
     let seasonNums = [0, 1, 2, 3, 4];
@@ -92,7 +87,9 @@ function addDropDownsForEpisodeNumber(season) {
   let searchEpisode = document.getElementById("searchepisode");
   searchEpisode.innerHTML = "<option disabled selected>Episode</option>";
   for (let i = 0; i < episodeNumber; i++) {
-    searchEpisode.innerHTML += `<option>Episode ${i + 1}</option>`;
+    searchEpisode.innerHTML += `<option value="${i + 1}">Episode ${
+      i + 1
+    }</option>`;
   }
 }
 
@@ -161,6 +158,22 @@ searchOptions.addEventListener("change", () => {
   }
 });
 
+/*const on = (selector, eventType, childSelector, eventHandler) => {
+  const elements = document.querySelectorAll(selector);
+  for (element of elements) {
+    element.addEventListener(eventType, (eventOnElement) => {
+      if (eventOnElement.target.matches(childSelector)) {
+        eventHandler(eventOnElement);
+      }
+    });
+  }
+};
+
+on("ul", "keyup", ".module.complete", (event) => {
+  const item = event.target;
+  //...your event handler
+});*/
+
 searchBar.addEventListener("keyup", (event) => {
   console.log("yello");
   let searchBar = document.getElementById("searchbar");
@@ -202,3 +215,7 @@ function changePage() {
   alert("you arent at the home page");
   currentURL = window.location.hash;
 }
+
+searchBar.onclick = function () {
+  console.log("hehehhehhe");
+};

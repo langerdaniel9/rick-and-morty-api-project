@@ -30,8 +30,14 @@ header {
   width: 20%;
 }
 
-.searchbar {
+.searchbox {
   width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.searchbar {
+  width: 100%;
 }
 
 .searchenter {

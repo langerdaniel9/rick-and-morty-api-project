@@ -44,3 +44,13 @@ body {
 .topsection {
   border: 1px solid black;
 }
+
+.shows-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show {
+  border: 1px solid black;
+  width: 18rem;
+}

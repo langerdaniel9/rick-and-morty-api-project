@@ -17,5 +17,8 @@
   },
   "browserslist": [
     "since 2017-06"
-  ]
+  ],
+  "dependencies": {
+    "dotenv": "^9.0.2"
+  }
 }
