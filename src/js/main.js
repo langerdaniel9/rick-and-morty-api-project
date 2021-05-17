@@ -20,8 +20,7 @@ function changePage() {
 //
 //
 
-let showImage1 =
-  "https://image.tmdb.org/t/p/w500/8kOWDBK6XlPUzckuHDo3wwVRFwt.jpg";
+let showImage1 = "";
 let showImage2 = "";
 let showDescriptionText = "";
 
@@ -30,6 +29,7 @@ function getMainImgAndDesc() {
   let showDesc = document.getElementById("main-description");
   getTMDBImage();
   getTVMazeImage();
+  getTMDBDescription();
 
   showPoster.src = showImage1;
 
@@ -44,6 +44,8 @@ async function getTMDBDescription() {
     );
     const data = await response.json();
     showDescriptionText = data.overview;
+    let showDesc = document.getElementById("main-description");
+    showDesc.innerHTML = showDescriptionText;
   } catch (error) {
     console.log(error);
   }
@@ -56,6 +58,8 @@ async function getTMDBImage() {
     );
     const data = await response.json();
     showImage1 = TMDBImgLinkPrefix + data.poster_path;
+    let showPoster = document.getElementById("show-poster");
+    showPoster.src = showImage1;
   } catch (error) {
     console.log(error);
   }
