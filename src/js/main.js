@@ -23,53 +23,60 @@ function changePage() {
 let showImage1 = "";
 let showImage2 = "";
 let showDescriptionText = "";
+let rating1 = "";
+let rating2 = "";
 
 function getMainImgAndDesc() {
   let showPoster = document.getElementById("show-poster");
   let showDesc = document.getElementById("main-description");
-  getTMDBImage();
-  getTVMazeImage();
-  getTMDBDescription();
+  getTMDBInfo();
+  getTVMazeInfo();
 
   showPoster.src = showImage1;
-
   showDesc.innerHTML = showDescriptionText;
 }
 getMainImgAndDesc();
 
-async function getTMDBDescription() {
+async function getTMDBInfo() {
   try {
     const response = await fetch(
       `https://api.themoviedb.org/3/tv/60625?api_key=${TMDBKey}`
     );
     const data = await response.json();
+
     showDescriptionText = data.overview;
     let showDesc = document.getElementById("main-description");
     showDesc.innerHTML = showDescriptionText;
-  } catch (error) {
-    console.log(error);
-  }
-}
 
-async function getTMDBImage() {
-  try {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/tv/60625?api_key=${TMDBKey}`
-    );
-    const data = await response.json();
     showImage1 = TMDBImgLinkPrefix + data.poster_path;
     let showPoster = document.getElementById("show-poster");
     showPoster.src = showImage1;
+
+    rating2 = data.vote_average;
+    let ratingBox = document.getElementById("ratings");
+    ratingBox.innerHTML += `
+    <div class="rating">
+      <div class="rating-value">${rating2}</div>
+    </div>
+    `;
   } catch (error) {
     console.log(error);
   }
 }
 
-async function getTVMazeImage() {
+async function getTVMazeInfo() {
   try {
     const response = await fetch(`https://api.tvmaze.com/shows/216`);
     const data = await response.json();
     showImage2 = data.image.original;
+
+    rating1 = data.rating.average;
+    let ratingBox = document.getElementById("ratings");
+    ratingBox.innerHTML += `
+    <div class="rating">
+      <div class="rating-value">${rating1}</div>
+    </div>
+    `;
   } catch (error) {
     console.log(error);
   }
