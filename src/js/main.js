@@ -63,7 +63,7 @@ async function getTMDBImage() {
 
 async function getTVMazeImage() {
   try {
-    const response = await fetch(`http://api.tvmaze.com/shows/216`);
+    const response = await fetch(`https://api.tvmaze.com/shows/216`);
     const data = await response.json();
     showImage2 = data.image.original;
   } catch (error) {

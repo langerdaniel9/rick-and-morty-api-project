@@ -36,7 +36,7 @@ findSimilarShows();
 async function makeBoxesForSimilarShow(showName) {
   try {
     const response = await fetch(
-      `http://api.themoviedb.org/3/search/tv?api_key=${TMDBKey}&query=${showName}`
+      `https://api.themoviedb.org/3/search/tv?api_key=${TMDBKey}&query=${showName}`
     );
     const data = await response.json();
 
