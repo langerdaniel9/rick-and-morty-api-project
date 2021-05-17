@@ -1,10 +1,5 @@
 const TMDBKey = process.env.TMDBKey;
 
-let currentURL = window.location.hash;
-if (currentURL != "") {
-  changePage();
-}
-
 let searchBar = document.getElementById("searchbar");
 let searchBox = document.getElementById("searchbox");
 let searchEnter = document.getElementById("searchenter");
@@ -158,7 +153,8 @@ searchOptions.addEventListener("change", () => {
   }
 });
 
-/*const on = (selector, eventType, childSelector, eventHandler) => {
+/*
+const on = (selector, eventType, childSelector, eventHandler) => {
   const elements = document.querySelectorAll(selector);
   for (element of elements) {
     element.addEventListener(eventType, (eventOnElement) => {
@@ -172,13 +168,20 @@ searchOptions.addEventListener("change", () => {
 on("ul", "keyup", ".module.complete", (event) => {
   const item = event.target;
   //...your event handler
-});*/
-
-searchBar.addEventListener("keyup", (event) => {
-  console.log("yello");
-  let searchBar = document.getElementById("searchbar");
-  console.log(searchBar.value);
 });
+*/
+
+/*
+let sbx = document.getElementById("searchbox");
+let sbxChildren = sbx.childNodes;
+sbxChildren.forEach((child) => {
+  child.addEventListener("keyup", (event) => {
+    console.log("yello");
+    let searchBar = document.getElementById("searchbar");
+    console.log(searchBar.value);
+  });
+});
+*/
 
 searchEnter.addEventListener("click", (event) => {
   console.log("clicked");
@@ -205,16 +208,6 @@ searchEnter.addEventListener("click", (event) => {
       break;
   }
 });
-
-window.addEventListener("hashchange", (event) => {
-  currentURL = window.location.hash;
-  console.log(currentURL);
-});
-
-function changePage() {
-  alert("you arent at the home page");
-  currentURL = window.location.hash;
-}
 
 searchBar.onclick = function () {
   console.log("hehehhehhe");

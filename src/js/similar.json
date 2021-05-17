@@ -1,0 +1,92 @@
+{
+  "Similar": {
+    "Info": [
+      {
+        "Name": "Rick And Morty",
+        "Type": "show"
+      }
+    ],
+    "Results": [
+      {
+        "Name": "Final Space",
+        "Type": "show"
+      },
+      {
+        "Name": "The Venture Bros.",
+        "Type": "show"
+      },
+      {
+        "Name": "Solar Opposites",
+        "Type": "show"
+      },
+      {
+        "Name": "Bob's Burgers",
+        "Type": "show"
+      },
+      {
+        "Name": "Family Guy",
+        "Type": "show"
+      },
+      {
+        "Name": "Love, Death & Robots",
+        "Type": "show"
+      },
+      {
+        "Name": "The Midnight Gospel",
+        "Type": "show"
+      },
+      {
+        "Name": "Bojack Horseman",
+        "Type": "show"
+      },
+      {
+        "Name": "Robot Chicken",
+        "Type": "show"
+      },
+      {
+        "Name": "South Park",
+        "Type": "show"
+      },
+      {
+        "Name": "Archer",
+        "Type": "show"
+      },
+      {
+        "Name": "F Is For Family",
+        "Type": "show"
+      },
+      {
+        "Name": "Disenchantment",
+        "Type": "show"
+      },
+      {
+        "Name": "American Dad!",
+        "Type": "show"
+      },
+      {
+        "Name": "The Simpsons",
+        "Type": "show"
+      },
+      {
+        "Name": "Aqua Teen Hunger Force",
+        "Type": "show"
+      },
+      {
+        "Name": "The Cleveland Show",
+        "Type": "show"
+      },
+      {
+        "Name": "Unsupervised",
+        "Type": "show"
+      },
+      {
+        "Name": "Jeff & Some Aliens",
+        "Type": "show"
+      },
+      {
+        "Name": "Frisky Dingo",
+        "Type": "show"
+      }
+    ]
+  }
+}

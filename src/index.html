@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rick and Morty Stuff">
   <title>Rick and Morty</title>
   <link rel="stylesheet" href="scss/style.scss" />
   <link rel="icon" href="/img/icon.ico">
@@ -35,12 +36,12 @@
           <button id="img-left" class="img-left">
             Left
           </button>
-          <img id="show-poster" class="show-poster" src="">
+          <img id="show-poster" class="show-poster" src="" alt="Rick and Morty Poster">
           <button id="img-right" class="img-right">
             Right
           </button>
         </div>
-        <div class="main-description">Description</div>
+        <div id="main-description" class="main-description">Description</div>
       </div>
 
       <div class="main-ratings">Ratings</div>
@@ -68,27 +69,7 @@
     <section class="similar-shows">
       <h1 class="similar-title">Similar shows to Rick and Morty:</h1>
       <div class="shows-box" id="showsbox">
-        <div class="show">
-          <h2>Show 1</h2>
-          <img src="img/icon.ico" alt="">
-          <h5>This show is about blah blah blah</h5>
-        </div>
-        <div class="show">
-          <h2>Show 1</h2>
-          <img src="img/icon.ico" alt="">
-          <h5>This show is about blah blah blah</h5>
-        </div>
-        <div class="show">
-          <h2>Show 1</h2>
-          <img src="img/icon.ico" alt="">
-          <h5>This show is about blah blah blah how does this work
-          </h5>
-        </div>
-        <div class="show">
-          <h2>Show 1</h2>
-          <img src="img/icon.ico" alt="">
-          <h5>This show is about blah blah blah</h5>
-        </div>
+
       </div>
     </section>
   </div>
@@ -98,10 +79,16 @@
       <p>Copyright © (insert funny name)</p>
       <p>All rights reserved</p>
     </div>
+    <p>Images and information provided by:</p>
+    <div class="tmdb-attribution">
+      <img class="tmdblogo" src="./img/TMDB Logo.svg" alt="TMDB Logo">
+      <img class="tvmazelogo" src="./img/TVMaze Logo.png" alt="TVMaze Logo">
+    </div>
   </footer>
 
   <script src="js/index.js"></script>
   <script src="js/related.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 

@@ -47,10 +47,33 @@ header {
 //Footer//
 
 footer {
-  height: 12vh;
+  height: 22vh;
   background-color: gray;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
+}
+
+.footer-copyright {
+  display: block;
+}
+
+.tmdb-attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tmdblogo {
+  display: inline;
+  height: 1.2rem;
+}
+
+.tvmazelogo {
+  padding-left: 2rem;
+  display: inline;
+  height: 2rem;
 }
