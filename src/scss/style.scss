@@ -38,7 +38,6 @@ body {
 
 .main-ratings {
   border: 1px solid black;
-  height: 20vh;
 }
 
 .topsection {
@@ -57,4 +56,11 @@ body {
 
 .showposter {
   max-width: 18rem;
+}
+
+.chartjs-charts {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 4rem;
 }

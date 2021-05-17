@@ -54,11 +54,60 @@ async function getTMDBInfo() {
 
     rating2 = data.vote_average;
     let ratingBox = document.getElementById("ratings");
-    ratingBox.innerHTML += `
+    /*ratingBox.innerHTML += `
     <div class="rating">
       <div class="rating-value">${rating2}</div>
     </div>
-    `;
+    `;*/
+
+    //chart.js
+
+    const ctx2 = document.getElementById("myChart2");
+    const myChart2 = new Chart(ctx2, {
+      type: "doughnut",
+      data: {
+        labels: false,
+        datasets: [
+          {
+            data: [rating2, 10 - rating2],
+            backgroundColor: ["rgba(64, 253, 19, 1)"],
+            borderColor: ["rgba(0,0,0,0)"],
+            borderWidth: 0,
+          },
+        ],
+      },
+      options: {
+        cutoutPercentage: 60,
+        responsive: false,
+        animateRotate: true,
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: "TMDB Rating",
+          fontStyle: "normal",
+          fontColor: "#000000",
+        },
+        elements: {
+          center: {
+            text: `${rating2}/10`,
+            fontColor: "rgba(0, 0, 0, 1)",
+            sidePadding: 20, // Default is 20 (as a percentage)
+            minFontSize: 15, // Default is 20 (in px), set to false and text will not wrap.
+            lineHeight: 25, // Default is 25 (in px), used for when text wraps
+          },
+        },
+        tooltips: {
+          enabled: false,
+        },
+        hover: {
+          mode: null,
+        },
+      },
+    });
+
+    //chart.js
 
     let showCreators = data.created_by;
 
@@ -81,11 +130,112 @@ async function getTVMazeInfo() {
 
     rating1 = data.rating.average;
     let ratingBox = document.getElementById("ratings");
-    ratingBox.innerHTML += `
+    /*ratingBox.innerHTML += `
     <div class="rating">
-      <div class="rating-value">${rating1}</div>
+      
+    <canvas id="rating-value-1" width="400" height="400"></canvas>
+
+    <div class="rating-value">${rating1}</div>
     </div>
-    `;
+    `;*/
+
+    //chart.js
+
+    const ctx1 = document.getElementById("myChart1");
+    const myChart1 = new Chart(ctx1, {
+      type: "doughnut",
+      data: {
+        labels: false,
+        datasets: [
+          {
+            data: [rating1, 10 - rating1],
+            backgroundColor: ["rgba(49, 253, 15, 1)"],
+            borderColor: ["rgba(0,0,0,0)"],
+            borderWidth: 0,
+          },
+        ],
+      },
+      options: {
+        cutoutPercentage: 60,
+        responsive: false,
+        animateRotate: true,
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: "TVMaze Rating",
+          fontStyle: "normal",
+          fontColor: "#000000",
+        },
+        elements: {
+          center: {
+            text: `${rating1}/10`,
+            fontColor: "rgba(0, 0, 0, 1)",
+            sidePadding: 20, // Default is 20 (as a percentage)
+            minFontSize: 15, // Default is 20 (in px), set to false and text will not wrap.
+            lineHeight: 25, // Default is 25 (in px), used for when text wraps
+          },
+        },
+        tooltips: {
+          enabled: false,
+        },
+        hover: {
+          mode: null,
+        },
+      },
+    });
+
+    ///////
+
+    const ctx2 = document.getElementById("myChart3");
+    const myChart3 = new Chart(ctx2, {
+      type: "doughnut",
+      data: {
+        labels: false,
+        datasets: [
+          {
+            data: [9.2, 10 - 9.2],
+            backgroundColor: ["rgba(40, 254, 12, 1)"],
+            borderColor: ["rgba(0,0,0,0)"],
+            borderWidth: 0,
+          },
+        ],
+      },
+      options: {
+        cutoutPercentage: 60,
+        responsive: false,
+        animateRotate: true,
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: "IMDB Rating",
+          fontStyle: "normal",
+          fontColor: "#000000",
+        },
+        elements: {
+          center: {
+            text: `${rating1}/10`,
+            fontColor: "rgba(0, 0, 0, 1)",
+            sidePadding: 20, // Default is 20 (as a percentage)
+            minFontSize: 15, // Default is 20 (in px), set to false and text will not wrap.
+            lineHeight: 25, // Default is 25 (in px), used for when text wraps
+          },
+        },
+        tooltips: {
+          enabled: false,
+        },
+        hover: {
+          mode: null,
+        },
+      },
+    });
+
+    //////
+
+    //chart.js
   } catch (error) {
     console.log(error);
   }
