@@ -28,7 +28,7 @@ let rating2 = "";
 
 function getMainImgAndDesc() {
   let showPoster = document.getElementById("show-poster");
-  let showDesc = document.getElementById("main-description");
+  let showDesc = document.getElementById("description-value");
   getTMDBInfo();
   getTVMazeInfo();
 
@@ -45,7 +45,7 @@ async function getTMDBInfo() {
     const data = await response.json();
 
     showDescriptionText = data.overview;
-    let showDesc = document.getElementById("main-description");
+    let showDesc = document.getElementById("description-value");
     showDesc.innerHTML = showDescriptionText;
 
     showImage1 = TMDBImgLinkPrefix + data.poster_path;
@@ -59,6 +59,15 @@ async function getTMDBInfo() {
       <div class="rating-value">${rating2}</div>
     </div>
     `;
+
+    let showCreators = data.created_by;
+
+    let showCreatorValue = document.getElementById("creator-value");
+    showCreatorValue.innerHTML =
+      showCreators[0].name + " and " + showCreators[1].name;
+
+    let firstAirDate = document.getElementById("air-date-value");
+    firstAirDate.innerHTML = data.first_air_date + " to " + data.last_air_date;
   } catch (error) {
     console.log(error);
   }
