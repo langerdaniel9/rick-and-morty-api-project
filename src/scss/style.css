@@ -1,0 +1,211 @@
+header {
+  height: 6vh;
+  background-color: orange;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 0px 0px;
+      grid-template-areas: "home search search .";
+}
+
+.home {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: home;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0.8rem;
+}
+
+.search {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: search;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: purple;
+  padding: 0.5rem 0;
+}
+
+.searchoptions {
+  width: 20%;
+}
+
+.searchbox {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.searchbar {
+  width: 100%;
+}
+
+.searchenter {
+  width: 12%;
+}
+
+footer {
+  height: 22vh;
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-copyright {
+  display: block;
+}
+
+.tmdb-attribution {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.tmdblogo {
+  display: inline;
+  height: 1.2rem;
+}
+
+.tvmazelogo {
+  padding-left: 2rem;
+  display: inline;
+  height: 2rem;
+}
+
+html,
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: black;
+}
+
+.portal {
+  height: 80vh;
+  width: 40vw;
+  background-image: url("../img/portal.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+  top: 4rem;
+  right: 2.7rem;
+  background-size: cover;
+}
+
+.search {
+  background-color: green;
+  width: 35vw;
+  height: 6vh;
+  margin-top: 48vh;
+  position: absolute;
+}
+
+.main,
+.season {
+  background-color: #123b3b;
+  padding: 2rem 5rem;
+}
+
+.main-split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-img {
+  border: 1px solid black;
+  height: 50vh;
+  width: 50%;
+}
+
+.show-poster {
+  max-width: 75%;
+  max-height: 45vh;
+}
+
+.main-description {
+  border: 1px solid black;
+  height: 50vh;
+  width: 50%;
+}
+
+.main-ratings {
+  border: 1px solid black;
+}
+
+.topsection {
+  border: 1px solid black;
+}
+
+.shows-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.show {
+  border: 1px solid black;
+  width: 18rem;
+}
+
+.showposter {
+  max-width: 18rem;
+}
+
+.chartjs-charts {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 4rem;
+}
+/*# sourceMappingURL=style.css.map */

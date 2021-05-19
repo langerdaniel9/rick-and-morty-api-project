@@ -9,9 +9,36 @@ body {
   //font-size: 62.5%;
 }
 
+.header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+.portal {
+  height: 80vh;
+  width: 40vw;
+  background-image: url("../img/portal.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+  top: 4rem;
+  right: 2.7rem;
+  background-size: cover;
+  //background-color: blue;
+}
+
+.search {
+  background-color: green;
+  width: 35vw;
+  height: 6vh;
+  margin-top: 48vh;
+  position: absolute;
+}
+
 .main,
 .season {
-  background-color: aqua;
+  background-color: rgb(18, 59, 59);
   padding: 2rem 5rem;
 }
 
