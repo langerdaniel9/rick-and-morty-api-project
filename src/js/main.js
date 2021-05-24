@@ -219,7 +219,6 @@ async function getTVMazeInfo() {
     <div class="rating">
       
     <canvas id="rating-value-1" width="400" height="400"></canvas>
-
     <div class="rating-value">${rating1}</div>
     </div>
     `;*/
