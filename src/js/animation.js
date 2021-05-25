@@ -9,8 +9,9 @@ const navOpen = document.querySelector(".nav-open");
 
 const tl = new TimelineLite({ paused: true, reversed: true });
 
-tl.to(".cover", 1, {
+tl.to(".cover", 3, {
   width: "65%",
+  opacity: "0",
   ease: Power2.easeOut,
 })
   .to(
@@ -39,8 +40,12 @@ tl.to(".cover", 1, {
       },
     }
   );
-
-navButton.addEventListener("click", () => {
+function toggleTween(tween) {
+  tween.reverse() ? tween.play : tween.reverse();
+}
+navButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("clicked");
   if (tl.isActive()) {
     e.preventDefault();
     e.stopImmediatePropagation();
@@ -48,7 +53,3 @@ navButton.addEventListener("click", () => {
   }
   toggleTween(tl);
 });
-
-function toggleTween(tween) {
-  tween.reversed() ? tween.play : tween.reversed();
-}
