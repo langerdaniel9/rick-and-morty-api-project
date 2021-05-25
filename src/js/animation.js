@@ -1,5 +1,5 @@
 const navButton = document.querySelector(".nav-button");
-const navOpen = document.querySelector("nav-open");
+const navOpen = document.querySelector(".nav-open");
 
 //const tween = TweenLite.to(object, time, {animate})
 
@@ -28,7 +28,7 @@ tl.to(".cover", 1, {
     {
       opacity: 0,
       x: 50,
-      ease: Power2easeOut,
+      ease: Power2.easeOut,
     },
     {
       opacity: 1,
@@ -50,5 +50,5 @@ navButton.addEventListener("click", () => {
 });
 
 function toggleTween(tween) {
-  tween.reversed() ? tweenplay : tween.reversed();
+  tween.reversed() ? tween.play : tween.reversed();
 }
