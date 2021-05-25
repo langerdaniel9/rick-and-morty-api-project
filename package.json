@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "dotenv": "^9.0.2",
+    "dotenv": "^10.0.0",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.32.11"
   },
