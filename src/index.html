@@ -8,30 +8,46 @@
   <title>Rick and Morty</title>
   <link rel="stylesheet" href="scss/style.scss" />
   <link rel="icon" href="/img/icon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto+Slab:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
 
   <header class="header">
-    <a class="home" href="">Home</a>
-    <div class="portal">
-
+    
+  <nav>
+    <div class="nav-closed">
+      <h3>Love Rick and Morty? Find Similar Shows!</h3>
+      <ul class="navlinks">
+        <a  href="">Home</a>
+        <a class="nav-button" href="">Search</a>
+        <a href="">Contact</a>
+      </ul>
     </div>
-    <div class="search">
-      <select class="searchoptions" id="searchoptions" name="options">
+
+    <div class="nav-open">
+      <div class="search">
+        <select class="searchoptions" id="searchoptions" name="options">
         <option value="all" selected disabled>Search By:</option>
         <option value="character">Character</option>
         <option value="seasonepisode">Season and Episode</option>
         <option value="location">Location</option>
-      </select>
+        </select>
     
-    <div class="searchbox" id="searchbox">
+        <div class="searchbox" id="searchbox">
         <input type="text" id="searchbar" class="searchbar" placeholder="Choose a search type" disabled></input>
-    </div>
+        </div>
   
-      <button disabled id="searchenter" class="searchenter">Search</button>
+        <button disabled id="searchenter" class="searchenter">Search</button>
+      </div>
+      <div class="nav-img">
+        <img src="./img/rickmorty.jpg" alt="image of rick and morty">
+      </div>
     </div>
+  </nav>
+  <img src="./img/background.jpg" alt="" class="cover">
   </header>
 
   <div class="main">
@@ -129,7 +145,10 @@
   <script src="js/related.js"></script>
   <script src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineLite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+  <script src="js/animation.js"></script>
 </body>
 
 
