@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rick and Morty Stuff">
+  <title>Everything about Rick and Morty</title>
+  <link rel="icon" href="./img/icon.ico">
+</head>
+
+
+<body>
+
+  <header class="header" id="header">
+    <nav id="nav">
+      <div class="navbar" id="navbar">
+        <a class="navbar-link" href="">Home</a>
+        <a class="navbar-link" id="navbar-search" href="#search" disabled>Search</a>
+        <a class="navbar-link" id="show-link" href="https://www.adultswim.com/videos/rick-and-morty"
+          target="_blank">Watch</a>
+      </div>
+
+
+    </nav>
+
+  </header>
+
+  <div class="show-details">
+    <div class="main-img">
+      <!-- <button id="img-left" class="img-left">
+        &#60;
+      </button> -->
+      <img id="show-poster" class="show-poster" src="" alt="Rick and Morty Poster">
+      <!-- <button id="img-right" class="img-right">
+        &#62;
+      </button> -->
+    </div>
+
+    <div id="show-details">
+      <div class="show-detail">
+        <p class="detail-title">Description:</p>
+        <p class="detail-value" id="description"></p>
+      </div>
+
+      <div class="show-detail">
+        <p class="detail-title">First Air Date:</p>
+        <p class="detail-value" id="first-air-date"></p>
+      </div>
+
+      <div class="show-detail">
+        <p class="detail-title">Last Air Date:</p>
+        <p class="detail-value" id="last-air-date"></p>
+      </div>
+
+      <div class="show-detail">
+        <p class="detail-title">Created By:</p>
+        <p class="detail-value" id="creator"></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="ratings">
+    <h1 class="ratings-header">Ratings:</h1>
+    <div id="chartjs-charts">
+    </div>
+  </div>
+
+  <p class="wip">Search functionality is still being worked on, not currently functional.</p>
+  <div id="search-div">
+
+    <h1 class="search-title">Want to find something specific?</h1>
+    <select id="searchoptions" name="options">
+      <option value="all" selected disabled>Search By:</option>
+      <option value="character">Character</option>
+      <option value="season">Season</option>
+      <option value="episode">Season and Episode</option>
+      <option value="location">Location</option>
+    </select>
+
+    <div id="searchbox">
+      <input type="text" id="searchbar" placeholder="Choose a search type" disabled></input>
+    </div>
+
+    <button disabled id="searchenter">Search</button>
+  </div>
+
+
+  <div class="similar-shows">
+    <h1 class="similar-title">Fan of Rick and Morty? Give these shows a try:</h1>
+    <div class="shows-box" id="showsbox"></div>
+  </div>
+
+  <!-- <results>
+    <div class="result">
+      <img src="./img/icon.ico" alt="">
+      <h2>Name</h2>
+    </div>
+  </results> -->
+
+  <footer class="footer" id="footer">
+    <div class="footer-copyright">
+      <p>Copyright © (insert funny name)</p>
+      <p>All rights reserved</p>
+    </div>
+    <p>Powered by:</p>
+    <div class="api-attribution">
+      <img class="tmdblogo logo" src="./img/Logos/TMDB/TMDB Logo.svg" alt="TMDB Logo">
+      <img class="tvmazelogo logo" src="./img/Logos/TVMaze/TVMaze Logo.png" alt="TVMaze Logo">
+      <img class="simkllogo logo" src="./img/Logos/Simkl/simkl_white_transparent.svg" alt="Simkl Logo">
+      <img class="traktlogo logo" src="./img/Logos/Trakt/trakt-wide-red-white.svg" alt="Trakt Logo">
+      <img class="rickandmortyapi logo" src="./img/Logos/rickandmortyapi/rickandmortyapi.svg"
+        alt="Rick and Morty API Logo">
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+
+</html>
