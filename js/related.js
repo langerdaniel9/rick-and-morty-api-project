@@ -7,6 +7,51 @@ export async function findSimilarShows() {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
+				Authorization: `Bearer ${TMDB_TOKEN}`,
+			},
+			redirect: "follow",
+		};
+
+		let response = await fetch(
+			`https://api.themoviedb.org/3/tv/60625/recommendations?language=en-US&page=1`,
+			requestOptions
+		);
+
+		const data = await response.json();
+
+		const showsReturned = 20;
+		let numOfSimilarShowsToDisplay = 5;
+
+		let randomNums = [];
+		// Pick `numOfSimilarShowsToDisplay` random numbers from 0 to `showsReturned`, and display those shows
+		while (randomNums.length < numOfSimilarShowsToDisplay) {
+			let randomNum = Math.floor(Math.random() * showsReturned);
+			if (!randomNums.includes(randomNum)) {
+				randomNums.push(randomNum);
+			}
+		}
+		randomNums.forEach((num) => {
+			let show = data.results[num];
+
+			document.getElementById("showsbox").innerHTML += `<div class="show">
+			<h2>${show.name}</h2>
+			<img class="showposter" src="${
+				"https://image.tmdb.org/t/p/w500" + show.poster_path
+			}" alt="${show.name + " Poster"}">
+			<h5>${show.overview}</h5>
+			</div>`;
+		});
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+export async function findSimilarShowsTRAKT() {
+	try {
+		let requestOptions = {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
 				"trakt-api-version": "2",
 				"trakt-api-key": TRAKT_KEY,
 			},
